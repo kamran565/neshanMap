@@ -1,0 +1,28 @@
+pluginManagement {
+    repositories {
+        google {
+            content {
+                includeGroupByRegex("com\\.android.*")
+                includeGroupByRegex("com\\.google.*")
+                includeGroupByRegex("androidx.*")
+            }
+        }
+        mavenCentral()
+        gradlePluginPortal()
+        jcenter() // Warning: this repository is going to shut down soon
+        // Add Neshan maven repo here
+        maven { url "https://maven.neshan.org/artifactory/public-maven" }
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        // Add Neshan maven repo here as well
+        maven { url "https://maven.neshan.org/artifactory/public-maven" }
+    }
+}
+
+rootProject.name = "neshanmap"
+include ':app'
